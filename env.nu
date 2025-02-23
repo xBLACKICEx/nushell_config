@@ -35,7 +35,7 @@ $env.PROMPT_COMMAND_RIGHT = $env.PROMPT_COMMAND_RIGHT? | default {||
     ([$last_exit_code, (char space), $time_segment] | str join)
 }
 
-# zoxide init nushell | save -f ~/.zoxide.nu
+zoxide init nushell | save -f ~/.zoxide.nu
 
 mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu
