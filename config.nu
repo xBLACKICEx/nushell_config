@@ -115,7 +115,7 @@ $env.config.keybindings = [
                         # otherwise search for last token
 
                         [
-                            (commandline | split words | reverse | skip 1 | reverse | str join ' ') 
+                            (commandline | split words | reverse | skip 1 | reverse | str join ' ')
                             (fzf
                                 --layout=reverse
                                 --preview 'bat -n --color=always {}'
@@ -146,6 +146,8 @@ use ~/.cache/starship/init.nu
 # Custom completions
 # source ( $nu.default-config-dir + "/scripts/custom-completions/git/git-completions.nu" )
 source ( $nu.default-config-dir + "/scripts/custom-completions/cargo/cargo-completions.nu" )
+source ( $nu.default-config-dir + "/scripts/custom-completions/flutter/flutter-completions.nu" )
+source ( $nu.default-config-dir + "/scripts/custom-completions/git/git-completions.nu" )
 source ( $nu.default-config-dir + "/scripts/custom-completions/rustup/rustup-completions.nu" )
 source ( $nu.default-config-dir + "/scripts/custom-completions/scoop/scoop-completions.nu" )
 source ( $nu.default-config-dir + "/scripts/custom-completions/vscode/vscode-completions.nu" )
