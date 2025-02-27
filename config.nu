@@ -140,9 +140,6 @@ $env.config.keybindings = [
     }
 ]
 
-source ~/.zoxide.nu
-use ~/.cache/starship/init.nu
-
 # Custom completions
 # source ( $nu.default-config-dir + "/scripts/custom-completions/git/git-completions.nu" )
 source ( $nu.default-config-dir + "/scripts/custom-completions/cargo/cargo-completions.nu" )
@@ -162,3 +159,18 @@ $env.config = ($env.config | merge {color_config: (fishtank)})
 
 # Aliases
 use ( $nu.default-config-dir + "/scripts/aliases/git/git-aliases.nu" ) *
+
+# Others config
+
+def --env y [...args] {
+	let tmp = (mktemp -t "yazi-cwd.XXXXXX")
+	yazi ...$args --cwd-file $tmp
+	let cwd = (open $tmp)
+	if $cwd != "" and $cwd != $env.PWD {
+		cd $cwd
+	}
+	rm -fp $tmp
+}
+
+source ~/.zoxide.nu
+use ~/.cache/starship/init.nu
