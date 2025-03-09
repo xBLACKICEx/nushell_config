@@ -141,15 +141,18 @@ $env.config.keybindings = [
 ]
 
 # Custom completions
-# source ( $nu.default-config-dir + "/scripts/custom-completions/git/git-completions.nu" )
+
+source ( $nu.default-config-dir + "/scripts/custom-completions/auto-generate/completions/minikube.nu" )
+source ( $nu.default-config-dir + "/scripts/custom-completions/auto-generate/parse-help.nu" )
+
 source ( $nu.default-config-dir + "/scripts/custom-completions/cargo/cargo-completions.nu" )
+source ( $nu.default-config-dir + "/scripts/custom-completions/docker/docker-completions.nu" )
 source ( $nu.default-config-dir + "/scripts/custom-completions/flutter/flutter-completions.nu" )
 source ( $nu.default-config-dir + "/scripts/custom-completions/git/git-completions.nu" )
 source ( $nu.default-config-dir + "/scripts/custom-completions/rustup/rustup-completions.nu" )
 source ( $nu.default-config-dir + "/scripts/custom-completions/scoop/scoop-completions.nu" )
 source ( $nu.default-config-dir + "/scripts/custom-completions/vscode/vscode-completions.nu" )
 source ( $nu.default-config-dir + "/scripts/custom-completions/winget/winget-completions.nu" )
-
 # Custom modules
 # source ( $nu.default-config-dir + "/scripts/modules/docker/docker.nu" )
 
@@ -159,6 +162,7 @@ $env.config = ($env.config | merge {color_config: (fishtank)})
 
 # Aliases
 use ( $nu.default-config-dir + "/scripts/aliases/git/git-aliases.nu" ) *
+use ( $nu.default-config-dir + "/scripts/aliases/docker/docker-aliases.nu" ) *
 
 # Others config
 
