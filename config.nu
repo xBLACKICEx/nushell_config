@@ -66,6 +66,7 @@ $env.config.color_config = {
         attr: b
     }
 }
+$env.config.footer_mode = "always"
 
 $env.config.keybindings = [
     {
